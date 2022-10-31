@@ -1,0 +1,17 @@
+
+
+  spring:
+    cloud:
+      gateway:
+        routes:
+          - id: servicio-pateles
+            uri: http://localhost:9002/lista
+            predicates:
+              - Path=/lista/**
+          - id: servicios-combo
+            uri: http://localhost:9009/listacombo
+            predicates:
+              - Path=/listacombo/**
+  server:
+    port: 8090
+
